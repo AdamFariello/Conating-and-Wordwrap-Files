@@ -25,10 +25,10 @@ int isdirectory(char* name){
 }
 
 int main (int argc, char * argv [argc+1]) {
-	if (argc < 2) 
+	if (argc < 2)
 		return EXIT_FAILURE;
-	
-	//argv[0] = command 
+
+	//argv[0] = command
 	//argv[1] = line width
 	int programSuccess = EXIT_SUCCESS;
 	for (int i = 2; i < argc; i++) {
@@ -36,8 +36,8 @@ int main (int argc, char * argv [argc+1]) {
 			int fd[2];
 			pipe(fd);
 			pid_t child = fork();
-	
-			if (child == -1) { 
+
+			if (child == -1) {
 				perror("Fork Fail");
 				abort();
 			}
@@ -45,7 +45,7 @@ int main (int argc, char * argv [argc+1]) {
 			if (child == 0) {
 				dup2(fd[1], 1);
 			        execl(WWPATH, WWPATH, argv[1], argv[i], NULL);
-			
+
 				close(fd[1]);
 			} else {
 				close(fd[1]);
@@ -65,12 +65,12 @@ int main (int argc, char * argv [argc+1]) {
 				if (whiteSpace == 0)
 					printf("%s", buf);
 			}
-			
+
 			close(fd[0]);
-			wait(NULL);	
+			wait(NULL);
 		}
-		else  
+		else
 			programSuccess = EXIT_FAILURE;
 	}
-	return programSuccess;	
+	return programSuccess;
 }
