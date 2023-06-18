@@ -12,17 +12,17 @@
 #define WWPATH "./ww"
 #endif
 
-int isdirectory(char* name){
+int isDirectory(char * name){
 	//check if directory, copied from lecture
 	struct stat data;
 	stat(name, &data);
 
 	if (S_ISDIR(data.st_mode)) {
 		printf("%s is a directory\n", name);
-		return EXIT_FAILURE;
+		return 1; //true
+	} else {
+		return 0; //false
 	}
-
-	return EXIT_SUCCESS;
 }
 
 int main (int argc, char * argv [argc+1]) {
@@ -31,7 +31,7 @@ int main (int argc, char * argv [argc+1]) {
 	//argv[0] = command 
 	//argv[1] = line width
 	for (int i = 2; i < argc; i++) {
-		if (isdirectory(argv[i]) == 0) {
+		if (! isDirectory(argv[i])) {
 			int fd[2];
 			pipe(fd);
 			pid_t child = fork();
@@ -54,8 +54,8 @@ int main (int argc, char * argv [argc+1]) {
 					read(fd[0] , buf, SHRT_MAX);
 
 					int whiteSpace = 0;
-					for (int i = 0; buf[i] != '\0'; i++) {
-						if (isspace(buf[i]) != 0) {
+					for (int j = 0; buf[j] != '\0'; j++) {
+						if (isspace(buf[j])) {
 							whiteSpace++;
 						} else {
 							whiteSpace = 0;
@@ -70,7 +70,9 @@ int main (int argc, char * argv [argc+1]) {
 			close(fd[0]);
 			wait(NULL);
 
-		} else { return EXIT_FAILURE; }
+		} else { 
+			return EXIT_FAILURE; 
+		}
 	}
 
 	return EXIT_SUCCESS;
