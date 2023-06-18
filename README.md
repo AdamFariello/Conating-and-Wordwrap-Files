@@ -5,25 +5,24 @@
 C terminal program which concats multiple files, 
 and then present the text with a desired character width limit.
 
-
 ### Where this repository comes from
 This repository is the work from, and for, the cs214 assignment: *"fork and exec"*.   
 *(If desired, you can look at the name of the assignment in the .png)*
 
-[This course]( https://www.cs.rutgers.edu/academics/undergraduate/course-synopses/course-details/01-198-214-systems-programming )
+[This course]( https://www.cs.rutgers.edu/academics/undergraduate/course-synopses/course-details/01-198-214-systems-programming ),
 was taken during Spring 2021.
 
 ---
 
-## Setup 
-
-### Installation
+## Installation
 Run the following in the terminal:   
-`git clone https://github.com/AdamFariello/terminal-multi-file-word-wrap.git`
+` git clone https://github.com/AdamFariello/terminal-multi-file-word-wrap.git `
 
-### Compiling
+---
+
+## Compiling
 Enter the folder where the repository was downloaded.    
-( `cd terminal-multi-file-word-wrap` )
+( ` cd terminal-multi-file-word-wrap ` )
 
 Then run either:
 #### Original 2021 submission of the program
@@ -37,11 +36,11 @@ Then run either:
 ---
 
 ## Running the program
-### Running wcat 
+### Running wcat  
 ` ./wcat [file 1] [file 2] ... [file n] `
+
+*(This command covers the program compiled from either version)*
 
 ### Deleting the files
 ` make clean `
 
-### Running ww / word-wrap (not necessary) 
-` ./ww [file] `
