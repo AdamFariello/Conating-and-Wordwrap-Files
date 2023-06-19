@@ -28,7 +28,7 @@ Then either:
 #### Compile the Original 2021 submission of the program
 ` make `
 
-#### Compile the New 2023 version of the program 
+#### (OPTIONAL) Compile the New 2023 version of the program 
 ` make wcat23 `   
  
 *(The difference between each version is surface level, just a updated version of how I'd write it).*
@@ -41,6 +41,6 @@ Then either:
 
 *(This command covers the program compiled from either version)*
 
-### Deleting the compiles programs 
+### (OPTIONAL) Deleting the compiles programs 
 ` make clean `
 
