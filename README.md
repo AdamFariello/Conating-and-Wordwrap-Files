@@ -14,7 +14,7 @@ was taken during Spring 2021.
 
 ---
 
-## Installation
+## Downloading the repository
 Run the following in the terminal:   
 ` git clone https://github.com/AdamFariello/terminal-multi-file-word-wrap.git `
 
@@ -22,13 +22,13 @@ Run the following in the terminal:
 
 ## Compiling
 Enter the folder where the repository was downloaded.    
-( ` cd terminal-multi-file-word-wrap ` )
+[ ` cd terminal-multi-file-word-wrap ` ]    
 
-Then run either:
-#### Original 2021 submission of the program
+Then either:
+#### Compile the Original 2021 submission of the program
 ` make `
 
-#### New 2023 version of the program 
+#### Compile the New 2023 version of the program 
 ` make wcat23 `   
  
 *(The difference between each version is surface level, just a updated version of how I'd write it).*
@@ -41,6 +41,6 @@ Then run either:
 
 *(This command covers the program compiled from either version)*
 
-### Deleting the files
+### Deleting the compiles programs 
 ` make clean `
 
